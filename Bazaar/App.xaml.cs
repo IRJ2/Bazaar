@@ -10,7 +10,7 @@ namespace Bazaar
         {
             InitializeComponent();
 
-            MainPage = new ProfilePage();
+            MainPage = new NavigationPage(new HomePage());
         }
 
         protected override void OnStart()

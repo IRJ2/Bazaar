@@ -79,16 +79,19 @@
                 <CollectionView x:Name="MainCollectionView" Grid.Row="2">
                     <CollectionView.Header>
                         <StackLayout Padding="0" Spacing="0">
-                            <Grid RowDefinitions="auto,auto,*">
-                                <CarouselView x:Name="MainCarouselView" Grid.Row="0">
+                            <Grid RowDefinitions="Auto,Auto,*">
+                                <CarouselView
+                                    x:Name="MainCarouselView"
+                                    Grid.Row="0"
+                                    HeightRequest="160">
                                     <CarouselView.ItemTemplate>
                                         <DataTemplate>
                                             <StackLayout BackgroundColor="Transparent">
-                                                <Grid RowDefinitions="auto,auto">
+                                                <Grid Margin="18,0" RowDefinitions="auto,auto">
                                                     <Image
                                                         Grid.Row="0"
                                                         Grid.RowSpan="2"
-                                                        Aspect="AspectFit"
+                                                        Aspect="AspectFill"
                                                         Source="{Binding viewimage}" />
                                                     <Label
                                                         Grid.Row="0"
@@ -104,16 +107,14 @@
                                 </CarouselView>
                                 <Label
                                     Grid.Row="1"
-                                    Margin="18,0,121,9"
+                                    Margin="18,0,0,0"
                                     FontSize="12"
                                     Text="Get Instant Delivery to your doorstep"
-                                    TextColor="Black"
-                                    TranslationY="-520" />
+                                    TextColor="Black" />
                                 <Grid
                                     Grid.Row="2"
                                     ColumnDefinitions="*,*"
-                                    RowDefinitions="Auto,auto"
-                                    TranslationY="-522">
+                                    RowDefinitions="Auto,auto">
                                     <Frame
                                         Grid.Row="0"
                                         Grid.Column="0"
@@ -259,15 +260,16 @@
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
                             HorizontalItemSpacing="8"
-                            Orientation="Horizontal"
-                            Span="1"
+                            Orientation="Vertical"
+                            Span="2"
                             VerticalItemSpacing="8" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout>
+                            <StackLayout BackgroundColor="White">
                                 <Frame
                                     Padding="0"
+                                    BackgroundColor="White"
                                     CornerRadius="10"
                                     HeightRequest="82"
                                     WidthRequest="72">

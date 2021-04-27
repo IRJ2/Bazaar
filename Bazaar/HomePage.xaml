@@ -1,47 +1,282 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bazaar.HomePage"
-             BackgroundColor="White">
+<ContentPage
+    x:Class="Bazaar.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
             <Grid RowDefinitions="auto,auto,*">
-                <ImageButton Grid.Row="0" Source="LocationIcon.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="18,13,318,13"/>
-                <Label Grid.Row="0" FontSize="13" Text="Calicut" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" Margin="46,16,271,16"/>
-                <ImageButton Grid.Row="0" Source="Vector7.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="15" WidthRequest="15" VerticalOptions="Center" Margin="93,24,260,22.5"/>
-                <ImageButton Grid.Row="0" Source="Vector5.png" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="24" WidthRequest="24" Margin="280,13,56,13"/>
-                <ImageButton Grid.Row="0" Source="PersonIcon.png" BackgroundColor="Transparent"  HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" WidthRequest="30" Margin="318,13,13,13"/>
-                <Frame Grid.Row="1" BackgroundColor="white"  CornerRadius="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="40" Padding="0" WidthRequest="324">
+                <ImageButton
+                    Grid.Row="0"
+                    Margin="18,13,318,13"
+                    BackgroundColor="Transparent"
+                    HeightRequest="24"
+                    HorizontalOptions="Start"
+                    Source="LocationIcon.png"
+                    VerticalOptions="Center"
+                    WidthRequest="24" />
+                <Label
+                    Grid.Row="0"
+                    Margin="46,16,271,16"
+                    FontSize="13"
+                    HorizontalOptions="Start"
+                    Text="Calicut"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <ImageButton
+                    Grid.Row="0"
+                    Margin="93,24,260,22.5"
+                    BackgroundColor="Transparent"
+                    HeightRequest="15"
+                    HorizontalOptions="Start"
+                    Source="Vector7.png"
+                    VerticalOptions="Center"
+                    WidthRequest="15" />
+                <ImageButton
+                    Grid.Row="0"
+                    Margin="280,13,56,13"
+                    BackgroundColor="Transparent"
+                    HeightRequest="24"
+                    HorizontalOptions="End"
+                    Source="Vector5.png"
+                    VerticalOptions="Center"
+                    WidthRequest="24" />
+                <ImageButton
+                    Grid.Row="0"
+                    Margin="318,13,13,13"
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    HorizontalOptions="End"
+                    Source="PersonIcon.png"
+                    VerticalOptions="Center"
+                    WidthRequest="30" />
+                <Frame
+                    Grid.Row="1"
+                    Padding="0"
+                    BackgroundColor="white"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="324">
                     <Grid ColumnDefinitions="*,auto">
-                        <Entry Grid.Column="0" BackgroundColor="Transparent" Placeholder="Search" FontSize="12" />
-                        <Image Grid.Column="1" Source="search.png" HeightRequest="24" WidthRequest="24" HorizontalOptions="End" VerticalOptions="Center" TranslationX="-8"/>
+                        <Entry
+                            Grid.Column="0"
+                            BackgroundColor="Transparent"
+                            FontSize="12"
+                            Placeholder="Search" />
+                        <Image
+                            Grid.Column="1"
+                            HeightRequest="24"
+                            HorizontalOptions="End"
+                            Source="search.png"
+                            TranslationX="-8"
+                            VerticalOptions="Center"
+                            WidthRequest="24" />
                     </Grid>
                 </Frame>
-                <ScrollView Grid.Row="2">
-                    <StackLayout>
-                        <CarouselView x:Name="MainCarouselView"
-                  IndicatorView="indicatorView">
-                            <CarouselView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout>
-                                        <Frame BackgroundColor="yellow">
-                                            <Grid RowDefinitions="auto,auto">
-                                                <Image Grid.RowSpan="2" Grid.Row="0" Source="{Binding viewimage}" Aspect="AspectFit" />
-                                                <Label Grid.Row="0" Text="{Binding viewtext}" TextColor="white" FontAttributes="Bold" />
-                                            </Grid>
-                                            </Frame>
-                                        <Image Source="{Binding viewimage}" Aspect="AspectFit" />
-                                        <Label Text="{Binding viewtext}" TextColor="white" FontAttributes="Bold" />
-                                    </StackLayout>
-                                </DataTemplate>
-                            </CarouselView.ItemTemplate>
-                        </CarouselView>
-                        <IndicatorView x:Name="indicatorView"
-                   IndicatorColor="LightGray"
-                   SelectedIndicatorColor="DarkGray"
-                   HorizontalOptions="Center" />
-                    </StackLayout>
-                </ScrollView>
+                <CollectionView x:Name="MainCollectionView" Grid.Row="2">
+                    <CollectionView.Header>
+                        <StackLayout Padding="0" Spacing="0">
+                            <Grid RowDefinitions="auto,auto,*">
+                                <CarouselView x:Name="MainCarouselView" Grid.Row="0">
+                                    <CarouselView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout BackgroundColor="Transparent">
+                                                <Grid RowDefinitions="auto,auto">
+                                                    <Image
+                                                        Grid.Row="0"
+                                                        Grid.RowSpan="2"
+                                                        Aspect="AspectFit"
+                                                        Source="{Binding viewimage}" />
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Margin="20,10"
+                                                        FontAttributes="Bold"
+                                                        FontSize="16"
+                                                        Text="{Binding viewtext}"
+                                                        TextColor="white" />
+                                                </Grid>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CarouselView.ItemTemplate>
+                                </CarouselView>
+                                <Label
+                                    Grid.Row="1"
+                                    Margin="18,0,121,9"
+                                    FontSize="12"
+                                    Text="Get Instant Delivery to your doorstep"
+                                    TextColor="Black"
+                                    TranslationY="-520" />
+                                <Grid
+                                    Grid.Row="2"
+                                    ColumnDefinitions="*,*"
+                                    RowDefinitions="Auto,auto"
+                                    TranslationY="-522">
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="18,0,0,0"
+                                        Padding="0"
+                                        CornerRadius="10"
+                                        HeightRequest="100"
+                                        WidthRequest="158">
+                                        <Grid RowDefinitions="*,Auto">
+                                            <StackLayout>
+                                                <Image
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Aspect="AspectFill"
+                                                    Source="Rectangle1439.png" />
+
+                                            </StackLayout>
+                                            <ImageButton
+                                                Grid.Row="1"
+                                                Margin="0,0,6,0"
+                                                Aspect="AspectFill"
+                                                BackgroundColor="Transparent"
+                                                HeightRequest="25"
+                                                HorizontalOptions="EndAndExpand"
+                                                Source="Group47744.png"
+                                                VerticalOptions="End"
+                                                WidthRequest="25" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Margin="6,0,0,6"
+                                                FontSize="12"
+                                                Text="Groceries &#10;and Essentials"
+                                                TextColor="White" />
+                                        </Grid>
+                                    </Frame>
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="0,0,18,0"
+                                        Padding="0"
+                                        CornerRadius="10"
+                                        HeightRequest="100"
+                                        WidthRequest="158">
+                                        <Grid RowDefinitions="*,Auto">
+                                            <StackLayout>
+                                                <Image
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Aspect="AspectFill"
+                                                    Source="Rectangle439.png" />
+                                            </StackLayout>
+                                            <ImageButton
+                                                Grid.Row="1"
+                                                Margin="0,0,6,0"
+                                                Aspect="AspectFill"
+                                                BackgroundColor="Transparent"
+                                                HeightRequest="25"
+                                                HorizontalOptions="EndAndExpand"
+                                                Source="Group47744.png"
+                                                VerticalOptions="End"
+                                                WidthRequest="25" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Margin="6,0,0,6"
+                                                FontSize="12"
+                                                Text="Pickup and &#10;Drop"
+                                                TextColor="White" />
+
+                                        </Grid>
+                                    </Frame>
+                                    <Frame
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Margin="18,0,0,0"
+                                        Padding="0"
+                                        CornerRadius="10"
+                                        HeightRequest="100"
+                                        WidthRequest="158">
+                                        <Grid RowDefinitions="*,Auto">
+                                            <StackLayout>
+                                                <Image
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Aspect="AspectFill"
+                                                    Source="Rectangle4392.png" />
+                                            </StackLayout>
+                                            <ImageButton
+                                                Grid.Row="1"
+                                                Margin="0,0,6,0"
+                                                Aspect="AspectFill"
+                                                BackgroundColor="Transparent"
+                                                HeightRequest="25"
+                                                HorizontalOptions="EndAndExpand"
+                                                Source="Group47744.png"
+                                                VerticalOptions="End"
+                                                WidthRequest="25" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Margin="6,0,0,6"
+                                                FontSize="12"
+                                                Text="Food &#10;Delivery"
+                                                TextColor="White" />
+                                        </Grid>
+                                    </Frame>
+                                    <Frame
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Margin="0,0,18,0"
+                                        Padding="0"
+                                        CornerRadius="10"
+                                        HeightRequest="100"
+                                        WidthRequest="158">
+                                        <Grid RowDefinitions="*,Auto">
+                                            <StackLayout>
+                                                <Image
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Aspect="AspectFill"
+                                                    Source="Rectangle4393.png" />
+                                            </StackLayout>
+                                            <ImageButton
+                                                Grid.Row="1"
+                                                Margin="0,0,6,0"
+                                                Aspect="AspectFill"
+                                                BackgroundColor="Transparent"
+                                                HeightRequest="25"
+                                                HorizontalOptions="EndAndExpand"
+                                                Source="Group47744.png"
+                                                VerticalOptions="End"
+                                                WidthRequest="25" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Margin="6,0,0,6"
+                                                FontSize="12"
+                                                Text="Meat and &#10;Fish"
+                                                TextColor="White" />
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                    </CollectionView.Header>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            HorizontalItemSpacing="8"
+                            Orientation="Horizontal"
+                            Span="1"
+                            VerticalItemSpacing="8" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame
+                                    Padding="0"
+                                    CornerRadius="10"
+                                    HeightRequest="82"
+                                    WidthRequest="72">
+                                    <ImageButton Aspect="AspectFit" Source="{Binding .}" />
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

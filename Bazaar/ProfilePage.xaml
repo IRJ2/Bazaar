@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bazaar.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid Padding="0" RowDefinitions="auto,auto,*">
+            <StackLayout>
+                <ImageButton
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="arrowback.png"
+                    VerticalOptions="Start"
+                    WidthRequest="30" />
+                <Frame Grid.Row="1" BackgroundColor="Transparent">
+                    <Grid
+                        Grid.Row="1"
+                        ColumnDefinitions="*,auto"
+                        RowDefinitions="auto,auto">
+                        <StackLayout>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="20,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Hey abd!"
+                                TextColor="Black" />
+                            <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="18,-100,0,0"
+                                HeightRequest="14"
+                                HorizontalOptions="Start"
+                                Source="phoneicon.png"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="14" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="34,-15,0,20"
+                                HorizontalOptions="Start"
+                                Text="+91 9898989898"
+                                TextColor="#787878"
+                                VerticalOptions="CenterAndExpand" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                Margin="0,-40,18,0"
+                                HorizontalOptions="End"
+                                Text="EDIT"
+                                TextColor="#F29035" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <BoxView
+                    Grid.Row="2"
+                    BackgroundColor="#F0F0F0"
+                    HeightRequest="8"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="360" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

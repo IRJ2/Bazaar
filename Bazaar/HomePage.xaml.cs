@@ -15,29 +15,38 @@ namespace Bazaar
     public partial class HomePage : ContentPage
     {
         ObservableCollection<CarouselClass> Datas;
-
+        List<string> HomepageImages;
         public HomePage()
         {
             Datas = new ObservableCollection<CarouselClass>();
             InitializeComponent();
+            HomepageImages = new List<string>()
+            {
+                "Group47750.png",
+                "Group47751.png",
+                "Group47752.png",
+                "Group47753.png"
+            };
+            MainCollectionView.ItemsSource = HomepageImages;
             Datas.Add(new CarouselClass
             {
-                viewtext = "Hello",
+                viewtext = "Get 10% off on your \nfirst food Delivery",
                 viewimage = "Rectangle.png"
             });
 
             Datas.Add(new CarouselClass
             {
-                viewtext = "Hello",
+                viewtext = "Get 10% off on your \nfirst food Delivery",
                 viewimage = "Rectangle.png"
             });
 
             Datas.Add(new CarouselClass
             {
-                viewtext = "Hello",
+                viewtext = "Get 10% off on your \nfirst food Delivery",
                 viewimage = "Rectangle.png"
             });
             MainCarouselView.ItemsSource = Datas;
+            
         }
     }
 }

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bazaar.RestaurantMenuPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <Grid Padding="0" RowDefinitions="auto,auto,auto,auto,*">
+                <ImageButton
+                    Grid.Row="0"
+                    Margin="18,13,318,13"
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="arrowback.png"
+                    VerticalOptions="Start"
+                    WidthRequest="30" />
+                <Image
+                    x:Name="HotelImage"
+                    Grid.Row="1"
+                    Margin="0,0,18,0"
+                    HeightRequest="60"
+                    HorizontalOptions="EndAndExpand"
+                    Source=""
+                    VerticalOptions="Center"
+                    WidthRequest="60" />
+                <Label
+                    x:Name="HotelName"
+                    Grid.Row="1"
+                    Margin="18,0,0,0"
+                    FontAttributes="Bold"
+                    FontSize="14"
+                    Text=""
+                    TextColor="Black" />
+                <Label
+                    x:Name="HotelPlace"
+                    Grid.Row="1"
+                    Margin="18,18,0,0"
+                    FontSize="12"
+                    Text=""
+                    TextColor="#787878 " />
+                <Image
+                    x:Name="ClockIcon"
+                    Grid.Row="1"
+                    Margin="18,30,0,0"
+                    HeightRequest="12"
+                    HorizontalOptions="Start"
+                    Source=""
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="12" />
+                <Label
+                    x:Name="TimeToReach"
+                    Grid.Row="1"
+                    Margin="35,38,0,0"
+                    FontSize="10"
+                    Text=""
+                    TextColor="#787878" />
+                <Frame
+                    Grid.Row="2"
+                    Padding="0"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="324">
+                    <Grid ColumnDefinitions="*,auto">
+                        <Entry
+                            Grid.Column="0"
+                            BackgroundColor="Transparent"
+                            FontSize="12"
+                            Placeholder="Search" />
+                        <Image
+                            Grid.Column="1"
+                            HeightRequest="24"
+                            HorizontalOptions="End"
+                            Source="search.png"
+                            TranslationX="-8"
+                            VerticalOptions="Center"
+                            WidthRequest="24" />
+                    </Grid>
+                </Frame>
+                <Label
+                    Grid.Row="3"
+                    Margin="18,0,0,0"
+                    FontSize="12"
+                    Text="Today's Special "
+                    TextColor="Black" />
+                <ScrollView>
+                    <Grid ColumnDefinitions="auto,auto,auto" RowDefinitions="auto,auto,auto" />
+                </ScrollView>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

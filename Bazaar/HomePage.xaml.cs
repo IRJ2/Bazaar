@@ -1,5 +1,6 @@
 ﻿using Bazaar.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -15,19 +16,58 @@ namespace Bazaar
     public partial class HomePage : ContentPage
     {
         ObservableCollection<CarouselClass> Datas;
-        List<string> HomepageImages;
+        ObservableCollection<CategoryClass> categories;
+        ObservableCollection<SubcategotyClass> subcategories;
+
         public HomePage()
         {
             Datas = new ObservableCollection<CarouselClass>();
+            categories = new ObservableCollection<CategoryClass>();
+            subcategories = new ObservableCollection<SubcategotyClass>();
             InitializeComponent();
-            HomepageImages = new List<string>()
+            subcategories.Add(new SubcategotyClass
             {
-                "Group47750.png",
-                "Group47751.png",
-                "Group47752.png",
-                "Group47753.png"
-            };
-            MainCollectionView.ItemsSource = HomepageImages;
+                categoryimage = "Rectangle434.png",
+                categoryname = "Medicines"
+            });
+            subcategories.Add(new SubcategotyClass
+            {
+                categoryimage = "Rectangle435.png",
+                categoryname = "Pet Supplies"
+            });
+            subcategories.Add(new SubcategotyClass
+            {
+                categoryimage = "Rectangle437.png",
+                categoryname = "Gift and\nLifestyles"
+            });
+            subcategories.Add(new SubcategotyClass
+            {
+                categoryimage = "Rectangle448.png",
+                categoryname = "Other Store\nin City"
+            });
+            BindableLayout.SetItemsSource(MainBindableLayout,ItemSource);
+
+            categories.Add(new CategoryClass
+            {
+                categoryimage = "Rectangle1439.png" ,
+                categoryname = "Groceries &\nEssentials"
+            });
+            categories.Add(new CategoryClass
+            {
+                categoryimage = "Rectangle439.png",
+                categoryname = "Pickup &\nDrop"
+            });
+            categories.Add(new CategoryClass
+            {
+                categoryimage = "Rectangle4392.png",
+                categoryname = "Food\nDelivery"
+            });
+            categories.Add(new CategoryClass
+            {
+                categoryimage = "Rectangle4393.png",
+                categoryname = "Meat &\nFish"
+            });
+            MainCollectionView.ItemsSource = categories;
             Datas.Add(new CarouselClass
             {
                 viewtext = "Get 10% off on your \nfirst food Delivery",
@@ -48,5 +88,7 @@ namespace Bazaar
             MainCarouselView.ItemsSource = Datas;
             
         }
+
+        public IEnumerable ItemSource { get; }
     }
 }

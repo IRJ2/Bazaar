@@ -44,6 +44,8 @@ namespace Bazaar
                 option = "About Us",
                 optionimage = "option1.png"
             });
+            MainCollectionView.ItemsSource = options;
+           
         }
     }
 }

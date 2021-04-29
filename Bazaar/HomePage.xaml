@@ -3,7 +3,8 @@
     x:Class="Bazaar.HomePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="White">
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout>
             <Grid RowDefinitions="auto,auto,*">
@@ -83,7 +84,7 @@
                                 <CarouselView
                                     x:Name="MainCarouselView"
                                     Grid.Row="0"
-                                    HeightRequest="160">
+                                    HeightRequest="135">
                                     <CarouselView.ItemTemplate>
                                         <DataTemplate>
                                             <StackLayout BackgroundColor="Transparent">
@@ -114,170 +115,75 @@
                                 <Grid
                                     Grid.Row="2"
                                     ColumnDefinitions="*,*"
-                                    RowDefinitions="Auto,auto">
-                                    <Frame
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        Margin="18,0,0,0"
-                                        Padding="0"
-                                        CornerRadius="10"
-                                        HeightRequest="100"
-                                        WidthRequest="158">
-                                        <Grid RowDefinitions="*,Auto">
-                                            <StackLayout>
-                                                <Image
-                                                    Grid.Row="0"
-                                                    Grid.RowSpan="2"
-                                                    Aspect="AspectFill"
-                                                    Source="Rectangle1439.png" />
-
-                                            </StackLayout>
-                                            <ImageButton
-                                                Grid.Row="1"
-                                                Margin="0,0,6,0"
-                                                Aspect="AspectFill"
-                                                BackgroundColor="Transparent"
-                                                HeightRequest="25"
-                                                HorizontalOptions="EndAndExpand"
-                                                Source="Group47744.png"
-                                                VerticalOptions="End"
-                                                WidthRequest="25" />
-                                            <Label
-                                                Grid.Row="1"
-                                                Margin="6,0,0,6"
-                                                FontSize="12"
-                                                Text="Groceries &#10;and Essentials"
-                                                TextColor="White" />
-                                        </Grid>
-                                    </Frame>
-                                    <Frame
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        Margin="0,0,18,0"
-                                        Padding="0"
-                                        CornerRadius="10"
-                                        HeightRequest="100"
-                                        WidthRequest="158">
-                                        <Grid RowDefinitions="*,Auto">
-                                            <StackLayout>
-                                                <Image
-                                                    Grid.Row="0"
-                                                    Grid.RowSpan="2"
-                                                    Aspect="AspectFill"
-                                                    Source="Rectangle439.png" />
-                                            </StackLayout>
-                                            <ImageButton
-                                                Grid.Row="1"
-                                                Margin="0,0,6,0"
-                                                Aspect="AspectFill"
-                                                BackgroundColor="Transparent"
-                                                HeightRequest="25"
-                                                HorizontalOptions="EndAndExpand"
-                                                Source="Group47744.png"
-                                                VerticalOptions="End"
-                                                WidthRequest="25" />
-                                            <Label
-                                                Grid.Row="1"
-                                                Margin="6,0,0,6"
-                                                FontSize="12"
-                                                Text="Pickup and &#10;Drop"
-                                                TextColor="White" />
-
-                                        </Grid>
-                                    </Frame>
-                                    <Frame
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        Margin="18,0,0,0"
-                                        Padding="0"
-                                        CornerRadius="10"
-                                        HeightRequest="100"
-                                        WidthRequest="158">
-                                        <Grid RowDefinitions="*,Auto">
-                                            <StackLayout>
-                                                <Image
-                                                    Grid.Row="0"
-                                                    Grid.RowSpan="2"
-                                                    Aspect="AspectFill"
-                                                    Source="Rectangle4392.png" />
-                                            </StackLayout>
-                                            <ImageButton
-                                                Grid.Row="1"
-                                                Margin="0,0,6,0"
-                                                Aspect="AspectFill"
-                                                BackgroundColor="Transparent"
-                                                HeightRequest="25"
-                                                HorizontalOptions="EndAndExpand"
-                                                Source="Group47744.png"
-                                                VerticalOptions="End"
-                                                WidthRequest="25" />
-                                            <Label
-                                                Grid.Row="1"
-                                                Margin="6,0,0,6"
-                                                FontSize="12"
-                                                Text="Food &#10;Delivery"
-                                                TextColor="White" />
-                                        </Grid>
-                                    </Frame>
-                                    <Frame
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        Margin="0,0,18,0"
-                                        Padding="0"
-                                        CornerRadius="10"
-                                        HeightRequest="100"
-                                        WidthRequest="158">
-                                        <Grid RowDefinitions="*,Auto">
-                                            <StackLayout>
-                                                <Image
-                                                    Grid.Row="0"
-                                                    Grid.RowSpan="2"
-                                                    Aspect="AspectFill"
-                                                    Source="Rectangle4393.png" />
-                                            </StackLayout>
-                                            <ImageButton
-                                                Grid.Row="1"
-                                                Margin="0,0,6,0"
-                                                Aspect="AspectFill"
-                                                BackgroundColor="Transparent"
-                                                HeightRequest="25"
-                                                HorizontalOptions="EndAndExpand"
-                                                Source="Group47744.png"
-                                                VerticalOptions="End"
-                                                WidthRequest="25" />
-                                            <Label
-                                                Grid.Row="1"
-                                                Margin="6,0,0,6"
-                                                FontSize="12"
-                                                Text="Meat and &#10;Fish"
-                                                TextColor="White" />
-                                        </Grid>
-                                    </Frame>
-                                </Grid>
+                                    RowDefinitions="Auto,auto" />
                             </Grid>
                         </StackLayout>
                     </CollectionView.Header>
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
-                            HorizontalItemSpacing="8"
+                            HorizontalItemSpacing="0"
                             Orientation="Vertical"
                             Span="2"
                             VerticalItemSpacing="8" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout BackgroundColor="White">
+                            <StackLayout Padding="0" Spacing="0">
                                 <Frame
                                     Padding="0"
-                                    BackgroundColor="White"
                                     CornerRadius="10"
-                                    HeightRequest="82"
-                                    WidthRequest="72">
-                                    <ImageButton Aspect="AspectFit" Source="{Binding .}" />
+                                    HeightRequest="100"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="158">
+                                    <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+                                        <Image
+                                            Grid.Row="0"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Aspect="AspectFill"
+                                            Source="{Binding categoryimage}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Margin="6,0,0,6"
+                                            Text="{Binding categoryname}"
+                                            TextColor="White" />
+                                        <ImageButton
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Aspect="AspectFill"
+                                            BackgroundColor="Transparent"
+                                            HeightRequest="25"
+                                            HorizontalOptions="EndAndExpand"
+                                            Source="Group47744.png"
+                                            VerticalOptions="End"
+                                            WidthRequest="25" />
+                                    </Grid>
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
+                    <CollectionView.Footer>
+                        <ScrollView Grid.Row="0" Orientation="Horizontal">
+                            <StackLayout x:Name="MainBindableLayout" Padding="0" Orientation="Horizontal">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame>
+                                            <Grid RowDefinitions="*,Auto">
+                                                <ImageButton
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Aspect="AspectFit"
+                                                    Source="{Binding categoryimage}" />
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+                    </CollectionView.Footer>
                 </CollectionView>
             </Grid>
         </StackLayout>

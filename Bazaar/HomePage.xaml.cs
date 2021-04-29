@@ -18,13 +18,20 @@ namespace Bazaar
         ObservableCollection<CarouselClass> Datas;
         ObservableCollection<CategoryClass> categories;
         ObservableCollection<SubcategotyClass> subcategories;
-
+        List<string> footertext;
         public HomePage()
         {
             Datas = new ObservableCollection<CarouselClass>();
             categories = new ObservableCollection<CategoryClass>();
             subcategories = new ObservableCollection<SubcategotyClass>();
             InitializeComponent();
+            footertext = new List<string>()
+            {
+                "Get things delivered to your \ndoorstep instantly",
+                "Delivery from anywhere in \nthe city",
+                "No minimum order value on your\npurchace"
+            };
+            BindableLayout.SetItemsSource(SecondBindableLayout,footertext);
             subcategories.Add(new SubcategotyClass
             {
                 categoryimage = "Rectangle434.png",
@@ -45,7 +52,7 @@ namespace Bazaar
                 categoryimage = "Rectangle448.png",
                 categoryname = "Other Store\nin City"
             });
-            BindableLayout.SetItemsSource(MainBindableLayout,ItemSource);
+            BindableLayout.SetItemsSource(MainBindableLayout, subcategories);
 
             categories.Add(new CategoryClass
             {
@@ -89,6 +96,6 @@ namespace Bazaar
             
         }
 
-        public IEnumerable ItemSource { get; }
+        
     }
 }

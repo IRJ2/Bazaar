@@ -166,23 +166,72 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                     <CollectionView.Footer>
-                        <ScrollView Grid.Row="0" Orientation="Horizontal">
-                            <StackLayout x:Name="MainBindableLayout" Padding="0" Orientation="Horizontal">
+                        <Grid  RowDefinitions="Auto,*">
+                            <ScrollView Grid.Row="0" Orientation="Horizontal" >
+                                <StackLayout
+                                    x:Name="MainBindableLayout"
+                                    Padding="0"
+                                    Orientation="Horizontal">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame
+                                                Padding="0"
+                                                BackgroundColor="Transparent"
+                                                HeightRequest="75"
+                                                WidthRequest="82">
+                                                <Grid RowDefinitions="*,Auto">
+                                                    <ImageButton
+                                                        Grid.Row="0"
+                                                        Grid.RowSpan="2"
+                                                        Aspect="AspectFit"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding categoryimage}" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="0,0,0,10"
+                                                        FontSize="10"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        Text="{Binding categoryname}"
+                                                        TextColor="white"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                </Grid>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+                            <StackLayout
+                                Grid.Row="1"
+                                x:Name="SecondBindableLayout"
+                                Padding="0"
+                                >
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <Frame>
-                                            <Grid RowDefinitions="*,Auto">
-                                                <ImageButton
-                                                    Grid.Row="0"
-                                                    Grid.RowSpan="2"
+                                        <Frame
+                                            Padding="0"
+                                            BackgroundColor="Transparent"
+                                            >
+                                            <Grid ColumnDefinitions="Auto,*">
+                                                <Image
+                                                    HeightRequest="30"
+                                                    WidthRequest="16"
+                                                    Grid.Column="0"
                                                     Aspect="AspectFit"
-                                                    Source="{Binding categoryimage}" />
+                                                    BackgroundColor="Transparent"
+                                                    Source="Lightning.png" />
+                                                <Label
+                                                    Grid.Column="1"
+                                                    FontSize="16"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    Text="{Binding footertext}"
+                                                    TextColor="Black"
+                                                    VerticalOptions="CenterAndExpand" />
                                             </Grid>
                                         </Frame>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
-                        </ScrollView>
+                        </Grid>
                     </CollectionView.Footer>
                 </CollectionView>
             </Grid>

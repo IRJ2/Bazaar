@@ -7,7 +7,7 @@
     NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <Grid Padding="0" RowDefinitions="auto,auto,auto,auto,*">
+            <Grid Padding="0" RowDefinitions="auto,auto,auto,*">
                 <ImageButton
                     Grid.Row="0"
                     Margin="18,13,318,13"
@@ -81,16 +81,61 @@
                             WidthRequest="24" />
                     </Grid>
                 </Frame>
-                <Label
-                    Grid.Row="3"
-                    Margin="18,0,0,0"
-                    FontSize="12"
-                    Text="Today's Special "
-                    TextColor="Black" />
-                <ScrollView>
-                    <Grid ColumnDefinitions="auto,auto,auto" RowDefinitions="auto,auto,auto" />
-                </ScrollView>
-
+                <CollectionView x:Name="MainCollectionView" Grid.Row="3">
+                    <CollectionView.Header>
+                        <StackLayout BackgroundColor="Transparent">
+                            <Label
+                                Margin="18,0,0,0"
+                                FontSize="12"
+                                Text="Today's Special "
+                                TextColor="Black" />
+                        </StackLayout>
+                    </CollectionView.Header>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            HorizontalItemSpacing="0"
+                            Orientation="Vertical"
+                            Span="3"
+                            VerticalItemSpacing="8" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="*,Auto">
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="100"
+                                    Source="{Binding foodimage}"
+                                    WidthRequest="100" />
+                                <Label
+                                    Grid.Row="1"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="{Binding foodname}"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="1"
+                                    Margin="0,0,0,5"
+                                    CharacterSpacing="0"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding foodcost}"
+                                    TextColor="Gray"
+                                    VerticalOptions="EndAndExpand" />
+                                <ImageButton
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Margin="0,0,0,40"
+                                    Aspect="AspectFit"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="35"
+                                    HorizontalOptions="End"
+                                    Source="plusicon.png"
+                                    VerticalOptions="EndAndExpand"
+                                    WidthRequest="35" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.Footer />
+                </CollectionView>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -14,11 +14,45 @@ namespace Bazaar
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RestaurantMenuPage : ContentPage
     {
+        ObservableCollection<FoodListClass> Food;
 
         public RestaurantMenuPage(RestaurantListClass hotels)
         {
-            
+            Food = new ObservableCollection<FoodListClass>();
+
             InitializeComponent();
+            Food.Add(new FoodListClass
+            {
+                foodname="Biriyani\n",
+                foodcost= "₹ 140",
+                foodimage="food1.png"
+            });
+            Food.Add(new FoodListClass
+            {
+                foodname = "Biriyani\n",
+                foodcost = "₹ 140",
+                foodimage = "food2.png"
+            });
+            Food.Add(new FoodListClass
+            {
+                foodname = "Biriyani\n",
+                foodcost = "₹ 140",
+                foodimage = "food1.png"
+            });
+            Food.Add(new FoodListClass
+            {
+                foodname = "Biriyani\n",
+                foodcost = "₹ 140",
+                foodimage = "food2.png"
+            });
+            Food.Add(new FoodListClass
+            {
+                foodname = "Biriyani\n",
+                foodcost = "₹ 140",
+                foodimage = "food1.png"
+            });
+            MainCollectionView.ItemsSource = Food;
+
             HotelImage.Source = hotels.hotelimage;
             HotelName.Text = hotels.hotelname;
             HotelPlace.Text = hotels.hotelplace;

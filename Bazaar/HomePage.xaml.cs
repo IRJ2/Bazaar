@@ -49,7 +49,7 @@ namespace Bazaar
             });
             subcategories.Add(new SubcategotyClass
             {
-                categoryimage = "Rectangle448.png",
+                categoryimage = "Rectangle121.png",
                 categoryname = "Other Store\nin City"
             });
             BindableLayout.SetItemsSource(MainBindableLayout, subcategories);

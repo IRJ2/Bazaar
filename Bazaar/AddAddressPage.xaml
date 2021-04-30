@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bazaar.AddAddressPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*,*">
+            <ImageButton
+                Grid.Row="0"
+                Margin="18,13,0,0"
+                Aspect="AspectFit"
+                BackgroundColor="Transparent"
+                HeightRequest="24"
+                HorizontalOptions="Start"
+                Source="arrowback.png"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="24" />
+
+            <Label
+                Grid.Row="0"
+                Margin="52,13,0,0"
+                Text="Add address"
+                TextColor="Black" />
+            <Image Grid.Row="1" Source="Map.png" />
+            <ImageButton
+                Grid.Row="1"
+                Margin="0,0,150,5"
+                Aspect="AspectFit"
+                BackgroundColor="Transparent"
+                HeightRequest="50"
+                HorizontalOptions="EndAndExpand"
+                Source="Button2.png"
+                VerticalOptions="EndAndExpand"
+                WidthRequest="50" />
+            <ImageButton
+                Grid.Row="1"
+                Margin="0,0,5,5"
+                Aspect="AspectFit"
+                BackgroundColor="Transparent"
+                HeightRequest="50"
+                HorizontalOptions="EndAndExpand"
+                Source="Button1.png"
+                VerticalOptions="EndAndExpand"
+                WidthRequest="150" />
+            <Frame
+                Grid.Row="2"
+                Margin="0,25,0,0"
+                Padding="0"
+                BorderColor="#F0F0F0"
+                CornerRadius="10"
+                HasShadow="False"
+                HeightRequest="50"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="324">
+                <Entry
+                    BackgroundColor="Transparent"
+                    FontSize="16"
+                    Placeholder="Flat,Floor,Building Name" />
+            </Frame>
+            <Frame
+                Grid.Row="2"
+                Margin="0,79,0,0"
+                Padding="0"
+                BorderColor="#F0F0F0"
+                CornerRadius="10"
+                HasShadow="False"
+                HeightRequest="50"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="324">
+                <Entry
+                    BackgroundColor="Transparent"
+                    FontSize="16"
+                    Placeholder="How to reach (Optional)" />
+            </Frame>
+            <Frame
+                Grid.Row="2"
+                Margin="0,133,0,0"
+                Padding="0"
+                BorderColor="#F0F0F0"
+                CornerRadius="10"
+                HasShadow="False"
+                HeightRequest="50"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="324">
+                <Entry
+                    BackgroundColor="Transparent"
+                    FontSize="16"
+                    Placeholder="Contact Details (Optional)" />
+            </Frame>
+            <Button
+                Grid.Row="2"
+                BackgroundColor="#F29035"
+                HorizontalOptions="CenterAndExpand"
+                Text="Save"
+                TextColor="White"
+                VerticalOptions="EndAndExpand"
+                WidthRequest="360" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

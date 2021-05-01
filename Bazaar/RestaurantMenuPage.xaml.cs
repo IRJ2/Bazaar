@@ -15,7 +15,6 @@ namespace Bazaar
     public partial class RestaurantMenuPage : ContentPage
     {
         ObservableCollection<FoodListClass> Food;
-
         public RestaurantMenuPage(RestaurantListClass hotels)
         {
             Food = new ObservableCollection<FoodListClass>();
@@ -58,8 +57,6 @@ namespace Bazaar
             HotelPlace.Text = hotels.hotelplace;
             TimeToReach.Text = hotels.timetoreach;
             ClockIcon.Source = hotels.clockimage;
-
         }
-        
     }
 }

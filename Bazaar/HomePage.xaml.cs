@@ -17,13 +17,13 @@ namespace Bazaar
     {
         ObservableCollection<CarouselClass> Datas;
         ObservableCollection<CategoryClass> categories;
-        ObservableCollection<SubcategotyClass> subcategories;
+        ObservableCollection<ItemClass> subcategories;
         List<string> footertext;
         public HomePage()
         {
             Datas = new ObservableCollection<CarouselClass>();
             categories = new ObservableCollection<CategoryClass>();
-            subcategories = new ObservableCollection<SubcategotyClass>();
+            subcategories = new ObservableCollection<ItemClass>();
             InitializeComponent();
             footertext = new List<string>()
             {
@@ -32,22 +32,22 @@ namespace Bazaar
                 "No minimum order value on your\npurchace"
             };
             BindableLayout.SetItemsSource(SecondBindableLayout,footertext);
-            subcategories.Add(new SubcategotyClass
+            subcategories.Add(new ItemClass
             {
                 categoryimage = "Rectangle434.png",
                 categoryname = "Medicines"
             });
-            subcategories.Add(new SubcategotyClass
+            subcategories.Add(new ItemClass
             {
                 categoryimage = "Rectangle435.png",
                 categoryname = "Pet Supplies"
             });
-            subcategories.Add(new SubcategotyClass
+            subcategories.Add(new ItemClass
             {
                 categoryimage = "Rectangle437.png",
                 categoryname = "Gift and\nLifestyles"
             });
-            subcategories.Add(new SubcategotyClass
+            subcategories.Add(new ItemClass
             {
                 categoryimage = "Rectangle121.png",
                 categoryname = "Other Store\nin City"

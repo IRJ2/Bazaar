@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bazaar.OrderGroceriesPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Grid RowDefinitions="auto,auto,*">
+                    <ImageButton
+                        Grid.Row="0"
+                        Margin="18,13,318,13"
+                        BackgroundColor="Transparent"
+                        HeightRequest="24"
+                        HorizontalOptions="Start"
+                        Source="arrowback.png"
+                        VerticalOptions="Center"
+                        WidthRequest="24" />
+                    <Label
+                        Margin="52,18"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="Order Daily Groceries"
+                        TextColor="Black" />
+                    <Frame
+                        Grid.Row="1"
+                        Padding="0"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="324">
+                        <Grid ColumnDefinitions="*,auto">
+                            <Entry
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                FontSize="12"
+                                Placeholder="Search" />
+                            <Image
+                                Grid.Column="1"
+                                HeightRequest="24"
+                                HorizontalOptions="End"
+                                Source="search.png"
+                                TranslationX="-8"
+                                VerticalOptions="Center"
+                                WidthRequest="24" />
+                        </Grid>
+                    </Frame>
+                    <CollectionView
+                        x:Name="MainCollectionView"
+                        Grid.Row="2"
+                        SelectionChanged="MainCollectionView_SelectionChanged"
+                        SelectionMode="Single">
+                        <CollectionView.Header>
+                            <StackLayout BackgroundColor="Transparent">
+                                <Label
+                                    Margin="20,0,0,0"
+                                    FontSize="10"
+                                    Text="198 Restaurants near you"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </CollectionView.Header>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0">
+                                    <StackLayout Padding="0" Spacing="0">
+                                        <Grid
+                                            Padding="0"
+                                            ColumnDefinitions="auto,*"
+                                            RowDefinitions="auto">
+                                            <Frame
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="18,10,0,10"
+                                                Padding="0"
+                                                CornerRadius="10"
+                                                HeightRequest="80"
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="CenterAndExpand"
+                                                WidthRequest="80">
+                                                <Image Aspect="AspectFill" Source="{Binding hotelimage}" />
+                                            </Frame>
+                                            <Grid
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                RowDefinitions="auto,auto,auto">
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Margin="20,20,120,4"
+                                                    Padding="0"
+                                                    FontAttributes="Bold"
+                                                    FontSize="12"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Text="{Binding hotelname}"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Margin="20,0,170,4"
+                                                    Padding="0"
+                                                    FontSize="12"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Text="{Binding hotelplace}"
+                                                    TextColor="#787878" />
+                                                <Image
+                                                    Grid.Row="2"
+                                                    Margin="20,0,0,23"
+                                                    Aspect="AspectFit"
+                                                    HeightRequest="12"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Source="{Binding clockimage}"
+                                                    TranslationY="1"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    WidthRequest="12" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Margin="20,0,152,21"
+                                                    FontSize="10"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Text="{Binding timetoreach}"
+                                                    TranslationX="18"
+                                                    VerticalOptions="CenterAndExpand" />
+                                            </Grid>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                HeightRequest="1"
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="EndAndExpand"
+                                                WidthRequest="324"
+                                                Color="#F0F0F0 " />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

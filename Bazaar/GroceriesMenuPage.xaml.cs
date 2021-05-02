@@ -132,5 +132,13 @@ namespace Bazaar
         {
             await Navigation.PopAsync();
         }
+        private async void MainCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MainCollectionView.SelectedItem != null)
+            {
+                CategoryClass selecteddata = e.CurrentSelection[0] as CategoryClass;
+                await Navigation.PushAsync(new CategoryPage(selecteddata));
+            }
+        }
     }
 }

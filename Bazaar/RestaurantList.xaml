@@ -54,7 +54,7 @@
                         SelectionChanged="MainCollectionView_SelectionChanged"
                         SelectionMode="Single">
                         <CollectionView.Header>
-                            <StackLayout BackgroundColor="Transparent">
+                            <StackLayout >
                                 <Label
                                     Margin="20,0,0,0"
                                     FontSize="10"

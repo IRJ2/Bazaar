@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="Bazaar.Views.AllView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout>
+            <CollectionView x:Name="MainCollectionView">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <Frame
+                                Margin="18,10,0,10"
+                                Padding="0"
+                                CornerRadius="10"
+                                HeightRequest="60"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="60">
+                                <Image Aspect="Fill" Source="{Binding categoryimage}" />
+                            </Frame>
+                            <Label
+                                Grid.Column="1"
+                                Margin="12,10,0,0"
+                                HorizontalOptions="Start"
+                                Text="{Binding categoryname}"
+                                TextColor="Black"
+                                VerticalOptions="Start" />
+                            <Label
+                                Grid.Column="1"
+                                Margin="12,28,0,0"
+                                FontSize="10"
+                                Text="{Binding itemamount}" />
+                            <Label
+                                Grid.Column="1"
+                                Margin="12,0,0,10"
+                                HorizontalOptions="Start"
+                                Text="{Binding itemcost}"
+                                TextColor="Black"
+                                VerticalOptions="EndAndExpand" />
+                            <BoxView
+                                Grid.Column="0"
+                                Grid.ColumnSpan="3"
+                                HeightRequest="1"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="End"
+                                WidthRequest="324"
+                                Color="#F0F0F0" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

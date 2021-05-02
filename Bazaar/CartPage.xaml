@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bazaar.CartPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowDefinitions="Auto,*,Auto">
+                <ImageButton
+                    Margin="18,13,0,0"
+                    Aspect="AspectFill"
+                    BackgroundColor="Transparent"
+                    HeightRequest="24"
+                    HorizontalOptions="StartAndExpand"
+                    Source="arrowback.png"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="24" />
+                <Label
+                    Grid.Row="0"
+                    Margin="52,13,0,0"
+                    Text="Cart"
+                    TextColor="Black" />
+                <CollectionView x:Name="MainCollectionView" Grid.Row="1" />
+                <Frame
+                    Grid.Row="2"
+                    Padding="0"
+                    HasShadow="False"
+                    HeightRequest="60"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand">
+                    <Grid RowDefinitions="Auto,Auto">
+                        <Button
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Margin="0,13,18,13"
+                            BackgroundColor="#F29035"
+                            CornerRadius="100"
+                            FontSize="12"
+                            HeightRequest="34"
+                            HorizontalOptions="EndAndExpand"
+                            Text="Proceed to Payment"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="155" />
+                        <Label
+                            Grid.Row="0"
+                            Margin="18,16,0,0"
+                            FontSize="10"
+                            HorizontalOptions="StartAndExpand"
+                            Text="TOTAL"
+                            TextColor="Black"
+                            VerticalOptions="CenterAndExpand" />
+                        <Label
+                            Grid.Row="1"
+                            Margin="18,0,12,0"
+                            HorizontalOptions="StartAndExpand"
+                            Text="₹ 230"
+                            TextColor="#F29035"
+                            VerticalOptions="CenterAndExpand" />
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

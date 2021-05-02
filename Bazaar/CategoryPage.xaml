@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Bazaar.CategoryPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="http://xamarin.com/schemas/2020/toolkit" xmlns:Estudo1="clr-namespace:Bazaar.Views"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,Auto,*">
+            <ImageButton
+                Grid.Row="0"
+                Margin="18,13,0,13"
+                BackgroundColor="Transparent"
+                Clicked="ImageButton_Clicked"
+                HeightRequest="24"
+                HorizontalOptions="Start"
+                Source="arrowback.png"
+                VerticalOptions="Start"
+                WidthRequest="24" />
+            <ImageButton
+                Margin="0,10,13,0"
+                BackgroundColor="Transparent"
+                HeightRequest="24"
+                HorizontalOptions="EndAndExpand"
+                Source="search.png"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="24" />
+            <Grid
+                Grid.Row="1"
+                ColumnDefinitions="Auto,*"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Image
+                    x:Name="CategoryImage"
+                    Grid.Column="0"
+                    Margin="18,0,0,0"
+                    HeightRequest="60"
+                    HorizontalOptions="StartAndExpand"
+                    Source=""
+                    WidthRequest="60" />
+                <Label
+                    x:Name="CategoryName"
+                    Grid.Column="1"
+                    Margin="12,0,0,0"
+                    Text=""
+                    TextColor="Black" />
+                <Label
+                    Grid.Column="1"
+                    Margin="12,0,0,0"
+                    HorizontalOptions="Start"
+                    Text="Reliance Fresh"
+                    VerticalOptions="EndAndExpand" />
+            </Grid>
+            <Grid Grid.Row="2" VerticalOptions="FillAndExpand">
+                <controls:TabView
+                x:Name="MainTabView"
+                IsSwipeEnabled="False"
+                TabIndicatorColor="#50B05A"
+                TabStripBackgroundColor="White"
+                TabStripHeight="22"
+                TabStripPlacement="Top">
+                    <controls:TabViewItem
+                    FontSize="9"
+                    FontSizeSelected="9"
+                    HeightRequest="10.25"
+                    Text="All"
+                    TextColor="Black"
+                    TextColorSelected="Black"
+                    WidthRequest="18.79">
+                        <Estudo1:AllView />
+                    </controls:TabViewItem>
+                    <controls:TabViewItem
+                    FontSize="9"
+                    FontSizeSelected="9"
+                    HeightRequest="10.25"
+                    Text="Best Sellers"
+                    TextColor="Black"
+                    TextColorSelected="Black"
+                    WidthRequest="18.79">
+                        <Estudo1:AllView />
+                    </controls:TabViewItem>
+                    <controls:TabViewItem
+                    FontSize="9"
+                    FontSizeSelected="9"
+                    HeightRequest="10.25"
+                    Text="Greens"
+                    TextColor="Black"
+                    TextColorSelected="Black"
+                    WidthRequest="18.79">
+                        <Estudo1:AllView />
+                    </controls:TabViewItem>
+                    <controls:TabViewItem
+                    FontSize="9"
+                    FontSizeSelected="9"
+                    HeightRequest="10.25"
+                    Text="Category"
+                    TextColor="Black"
+                    TextColorSelected="Black"
+                    WidthRequest="18.79">
+                        <Estudo1:AllView />
+                    </controls:TabViewItem>
+                </controls:TabView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

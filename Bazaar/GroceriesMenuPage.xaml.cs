@@ -1,4 +1,5 @@
 ﻿using Bazaar.Model;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -127,6 +128,7 @@ namespace Bazaar
             HotelPlace.Text = Grocery.hotelplace;
             TimeToReach.Text = Grocery.timetoreach;
             ClockIcon.Source = Grocery.clockimage;
+            
         }
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
@@ -139,6 +141,12 @@ namespace Bazaar
                 CategoryClass selecteddata = e.CurrentSelection[0] as CategoryClass;
                 await Navigation.PushAsync(new CategoryPage(selecteddata));
             }
+        }
+        private async void AddButton_Clicked(object sender, EventArgs e)
+        {
+            
+            ItemClass displayitems = (sender as ImageButton).BindingContext as ItemClass;
+            await Navigation.PushPopupAsync( new AddItemPopup(displayitems));
         }
     }
 }

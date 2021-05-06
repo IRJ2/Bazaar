@@ -47,5 +47,9 @@ namespace Bazaar
             MainCollectionView.ItemsSource = options;
            
         }
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

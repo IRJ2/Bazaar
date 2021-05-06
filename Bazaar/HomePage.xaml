@@ -36,8 +36,9 @@
                     WidthRequest="15" />
                 <ImageButton
                     Grid.Row="0"
+                    Clicked="ImageButton_Clicked"
                     Margin="280,13,56,13"
-                    BackgroundColor="Transparent"
+                    BackgroundColor="White"
                     HeightRequest="24"
                     HorizontalOptions="End"
                     Source="Vector5.png"
@@ -46,7 +47,8 @@
                 <ImageButton
                     Grid.Row="0"
                     Margin="318,13,13,13"
-                    BackgroundColor="Transparent"
+                    Clicked="ProfileButton_Clicked"
+                    BackgroundColor="White"
                     HeightRequest="30"
                     HorizontalOptions="End"
                     Source="PersonIcon.png"

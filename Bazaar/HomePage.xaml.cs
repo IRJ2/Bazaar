@@ -95,7 +95,14 @@ namespace Bazaar
             MainCarouselView.ItemsSource = Datas;
             
         }
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CartPage());
+        }
+        private async void ProfileButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilePage());
+        }
 
-        
     }
 }

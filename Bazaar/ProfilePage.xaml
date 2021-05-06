@@ -3,7 +3,8 @@
     x:Class="Bazaar.ProfilePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="White">
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <Grid Padding="0" RowDefinitions="auto,auto,auto,*">
             <StackLayout>
@@ -12,6 +13,7 @@
                     Margin="18,13,0,0"
                     BackgroundColor="Transparent"
                     HeightRequest="24"
+                    Clicked="ImageButton_Clicked"
                     HorizontalOptions="Start"
                     Source="arrowback.png"
                     VerticalOptions="Start"

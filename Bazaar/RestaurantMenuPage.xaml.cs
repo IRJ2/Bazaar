@@ -58,5 +58,10 @@ namespace Bazaar
             TimeToReach.Text = hotels.timetoreach;
             ClockIcon.Source = hotels.clockimage;
         }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

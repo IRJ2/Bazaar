@@ -10,6 +10,7 @@
             <Grid Padding="0" RowDefinitions="auto,auto,auto,*">
                 <ImageButton
                     Grid.Row="0"
+                    Clicked="ImageButton_Clicked"
                     Margin="18,13,318,13"
                     BackgroundColor="Transparent"
                     HeightRequest="30"
@@ -129,66 +130,12 @@
                                     HeightRequest="35"
                                     HorizontalOptions="End"
                                     Source="plusicon.png"
+                                    Clicked="AddButton_Clicked"
                                     VerticalOptions="EndAndExpand"
                                     WidthRequest="35" />
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
-                    <!--<CollectionView.Footer>
-                        <CollectionView x:Name="SecondCollectionView">
-                            <CollectionView.ItemsLayout>
-                                <GridItemsLayout
-                                    Orientation="Vertical"
-                                    Span="1"
-                                    VerticalItemSpacing="0" />
-                            </CollectionView.ItemsLayout>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander>
-                                        <Expander.Header>
-                                            <Grid>
-                                                <Label
-                                                    FontAttributes="Bold"
-                                                    FontSize="Medium"
-                                                    Text="" />
-                                                <Image
-                                                    HorizontalOptions="End"
-                                                    Source="expand.png"
-                                                    VerticalOptions="Start">
-                                                    <Image.Triggers>
-                                                        <DataTrigger
-                                                            Binding=""
-                                                            TargetType="Image"
-                                                            Value="True">
-                                                            <Setter Property="Source" Value="Collapse.png" />
-                                                        </DataTrigger>
-                                                    </Image.Triggers>
-                                                </Image>
-                                            </Grid>
-                                        </Expander.Header>
-                                        <Expander.ContentTemplate>
-                                            <DataTemplate>
-                                                <StackLayout
-                                                    x:Name="MainBindableLayout"
-                                                    Grid.Row="1"
-                                                    Padding="0">
-                                                    <BindableLayout.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <Frame Padding="0" BackgroundColor="#F5F5F5">
-                                                                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,Auto">
-
-                                                                </Grid>
-                                                            </Frame>
-                                                        </DataTemplate>
-                                                    </BindableLayout.ItemTemplate>
-                                                </StackLayout>
-                                            </DataTemplate>
-                                        </Expander.ContentTemplate>
-                                    </Expander>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                    </CollectionView.Footer>-->
                 </CollectionView>
             </Grid>
         </StackLayout>

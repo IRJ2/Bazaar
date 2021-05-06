@@ -3,12 +3,14 @@
     x:Class="Bazaar.CartPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="White">
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout>
             <Grid RowDefinitions="Auto,*,Auto">
                 <ImageButton
-                    Margin="18,13,0,0"
+                    Clicked="ImageButton_Clicked"
+                    Margin="18,0,0,0"
                     Aspect="AspectFill"
                     BackgroundColor="Transparent"
                     HeightRequest="24"
@@ -17,11 +19,12 @@
                     VerticalOptions="CenterAndExpand"
                     WidthRequest="24" />
                 <Label
+                    VerticalOptions="CenterAndExpand"
                     Grid.Row="0"
-                    Margin="52,13,0,0"
+                    Margin="52,0,0,0"
                     Text="Cart"
                     TextColor="Black" />
-                <CollectionView x:Name="MainCollectionView" Grid.Row="1" />
+                <BoxView Grid.Row="0" HeightRequest="1" Color="#F0F0F0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Margin="0,50,0,0"/>
                 <Frame
                     Grid.Row="2"
                     Padding="0"
@@ -60,6 +63,396 @@
                             VerticalOptions="CenterAndExpand" />
                     </Grid>
                 </Frame>
+                <ScrollView Grid.Row="1">
+                    <Grid RowDefinitions="*,*,*">
+                        <Grid
+                            Grid.Row="0"
+                            Padding="0"
+                            RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                            <Label
+                                Grid.Row="0"
+                                Margin="18"
+                                Text="Paragon Restaurant"
+                                TextTransform="Uppercase"
+                                VerticalOptions="StartAndExpand" />
+                            <Frame
+                                Grid.Row="1"
+                                Margin="0,-25,0,0"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="StartAndExpand">
+                                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto">
+                                    <Image
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Aspect="AspectFill"
+                                        HeightRequest="5"
+                                        HorizontalOptions="StartAndExpand"
+                                        Source="GreenDot.png"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="5" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="18,0,0,0"
+                                        Text="Chicken Biriyani"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Margin="18,0,0,0"
+                                        FontSize="12"
+                                        Text="Full"
+                                        TextColor="#787878" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        Margin="25,0,0,0"
+                                        HorizontalOptions="Start"
+                                        Text="₹ 120"
+                                        TextColor="Black"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        Padding="0"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="#50B05A"
+                                        CornerRadius="10"
+                                        HasShadow="False"
+                                        HeightRequest="25"
+                                        HorizontalOptions="EndAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="84">
+                                        <Grid>
+                                            <Button
+                                                Margin="-5,-20,0,-15"
+                                                BackgroundColor="Transparent"
+                                                FontSize="30"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="-"
+                                                TextColor="#50B05A"
+                                                VerticalOptions="CenterAndExpand"
+                                                WidthRequest="50" />
+                                            <Label
+                                                Margin="0,0,0,0"
+                                                FontSize="16"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="2"
+                                                TextColor="#50B05A"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Button
+                                                Margin="0,-14,-5,-3"
+                                                BackgroundColor="Transparent"
+                                                FontSize="20"
+                                                HorizontalOptions="EndAndExpand"
+                                                Text="+"
+                                                TextColor="#50B05A"
+                                                VerticalOptions="CenterAndExpand"
+                                                WidthRequest="50" />
+                                        </Grid>
+                                    </Frame>
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="2"
+                                        Margin="0,0,0,-10"
+                                        HeightRequest="1"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="EndAndExpand"
+                                        Color="#F0F0F0" />
+                                </Grid>
+                            </Frame>
+                            <Frame
+                                Grid.Row="2"
+                                Margin="0,-25,0,0"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="StartAndExpand">
+                                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto">
+                                    <Image
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Aspect="AspectFill"
+                                        HeightRequest="5"
+                                        HorizontalOptions="StartAndExpand"
+                                        Source="GreenDot.png"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="5" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="18,0,0,0"
+                                        Text="Chicken Biriyani"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Margin="18,0,0,0"
+                                        FontSize="12"
+                                        Text="Half"
+                                        TextColor="#787878" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        Margin="25,0,0,0"
+                                        HorizontalOptions="Start"
+                                        Text="₹ 70"
+                                        TextColor="Black"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        Padding="0"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="#50B05A"
+                                        CornerRadius="10"
+                                        HasShadow="False"
+                                        HeightRequest="25"
+                                        HorizontalOptions="EndAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="84">
+                                        <Grid>
+                                            <Button
+                                                Margin="-5,-20,0,-15"
+                                                BackgroundColor="Transparent"
+                                                FontSize="30"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="-"
+                                                TextColor="#50B05A"
+                                                VerticalOptions="CenterAndExpand"
+                                                WidthRequest="50" />
+                                            <Label
+                                                Margin="0,0,0,0"
+                                                FontSize="16"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="2"
+                                                TextColor="#50B05A"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Button
+                                                Margin="0,-14,-5,-3"
+                                                BackgroundColor="Transparent"
+                                                FontSize="20"
+                                                HorizontalOptions="EndAndExpand"
+                                                Text="+"
+                                                TextColor="#50B05A"
+                                                VerticalOptions="CenterAndExpand"
+                                                WidthRequest="50" />
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+                            <Button
+                                Grid.Row="3"
+                                Margin="3,-15,0,10"
+                                BackgroundColor="Transparent"
+                                HorizontalOptions="StartAndExpand"
+                                Text="+ Add more"
+                                TextColor="#F29035"
+                                TextTransform="None"
+                                VerticalOptions="StartAndExpand" />
+                            <Label
+                                Grid.Row="4"
+                                Margin="45,0,0,0"
+                                FontSize="12"
+                                Text="Any instructions? Eg: Don't ring the doorbell" />
+                            <Image
+                                Grid.Row="4"
+                                Margin="18,-25,0,0"
+                                Aspect="AspectFill"
+                                HeightRequest="18"
+                                HorizontalOptions="Start"
+                                Source="noteicone.png"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="18" />
+                            <BoxView
+                                Grid.Row="4"
+                                Margin="0,40,0,0"
+                                HeightRequest="8"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="EndAndExpand"
+                                Color="#F0F0F0" />
+                        </Grid>
+                        <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto,Auto">
+                            <Label
+                                Grid.Row="0"
+                                Margin="18,10,0,0"
+                                Text="Address"
+                                TextTransform="Uppercase" />
+                            <Frame
+                                Grid.Row="1"
+                                Margin="0,-17,0,0"
+                                BackgroundColor="Transparent">
+                                <Grid ColumnDefinitions="Auto,*,Auto">
+                                    <RadioButton
+                                        Grid.Column="0"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="#F29035"
+                                        Content="Flat,Floor,Building Name &#10;How to reach&#10;9898989898"
+                                        FontSize="12" />
+                                    <Button
+                                        Grid.Column="2"
+                                        Margin="0,0,-30,0"
+                                        BackgroundColor="Transparent"
+                                        FontSize="12"
+                                        HorizontalOptions="EndAndExpand"
+                                        Text="Edit"
+                                        TextColor="#F29035"
+                                        TextTransform="None" />
+                                    <BoxView
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                        Margin="0,70,0,0"
+                                        HeightRequest="1"
+                                        VerticalOptions="EndAndExpand"
+                                        WidthRequest="324"
+                                        Color="#F0F0F0" />
+                                </Grid>
+                            </Frame>
+                            <Frame
+                                Grid.Row="2"
+                                Margin="0,-30,0,0"
+                                BackgroundColor="Transparent">
+                                <Grid ColumnDefinitions="Auto,*,Auto">
+                                    <RadioButton
+                                        Grid.Column="0"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="#F29035"
+                                        Content="Flat,Floor,Building Name &#10;How to reach&#10;9898989898"
+                                        FontSize="12" />
+                                </Grid>
+                            </Frame>
+                            <Button
+                                Grid.Row="3"
+                                Margin="0,0,0,15"
+                                BackgroundColor="Transparent"
+                                HeightRequest="40"
+                                HorizontalOptions="StartAndExpand"
+                                Text="+ Add address"
+                                TextColor="#F29035"
+                                TextTransform="None"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="125" />
+                            <BoxView
+                                Grid.Row="3"
+                                Margin="0,0,0,0"
+                                HeightRequest="8"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="EndAndExpand"
+                                Color="#F0F0F0" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="2"
+                            Padding="0"
+                            RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                            <Label
+                                Grid.Row="0"
+                                Margin="18,-20,0,0"
+                                HorizontalOptions="StartAndExpand"
+                                Text="Payement Details"
+                                TextTransform="Uppercase"
+                                VerticalOptions="StartAndExpand" />
+                            <Frame Grid.Row="1" Padding="0" HeightRequest="50" BackgroundColor="Transparent">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="0"
+                                        Text="Item total"
+                                        TextColor="Black" Margin="18,0,0,10" />
+                                    <Label
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="1"
+                                        Text="₹ 210"
+                                        Margin="0,0,18,10"
+                                        TextColor="Black" />
+                                    <BoxView
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        HeightRequest="1"
+                                        HorizontalOptions="CenterAndExpand"
+                                        WidthRequest="324"
+                                        Margin="0,25,0,-10"
+                                        VerticalOptions="CenterAndExpand"
+                                        Color="#F0F0F0" />
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Padding="0" HeightRequest="50" BackgroundColor="Transparent">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="0"
+                                        Text="Tax"
+                                        TextColor="Black" Margin="18,0,0,10" />
+                                    <Label
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="1"
+                                        Text="₹ 20"
+                                        Margin="0,0,18,10"
+                                        TextColor="Black" />
+                                    <BoxView
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        HeightRequest="1"
+                                        HorizontalOptions="CenterAndExpand"
+                                        WidthRequest="324"
+                                        Margin="0,25,0,-10"
+                                        VerticalOptions="CenterAndExpand"
+                                        Color="#F0F0F0" />
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="3" Padding="0" HeightRequest="50" BackgroundColor="Transparent">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="0"
+                                        Text="Delivery fee"
+                                        TextColor="Black" Margin="18,0,0,10" />
+                                    <Label
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="1"
+                                        Text="FREE"
+                                        Margin="0,0,18,10"
+                                        TextColor="#F29035" />
+                                    <BoxView
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        HeightRequest="1"
+                                        HorizontalOptions="CenterAndExpand"
+                                        WidthRequest="324"
+                                        Margin="0,25,0,-10"
+                                        VerticalOptions="CenterAndExpand"
+                                        Color="#F0F0F0" />
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="4" Padding="0" HeightRequest="50" BackgroundColor="Transparent">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="0"
+                                        Text="To pay"
+                                        FontAttributes="Bold"
+                                        TextColor="Black" Margin="18,0,0,10" />
+                                    <Label
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Grid.Column="1"
+                                        Text="₹ 230"
+                                        FontAttributes="Bold"
+                                        Margin="0,0,18,10"
+                                        TextColor="Black" />
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                </ScrollView>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

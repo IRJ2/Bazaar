@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Bazaar
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CartPage : ContentPage
+    public partial class AddFoodItemPage : ContentPage
     {
-        public CartPage()
+        public AddFoodItemPage()
         {
             InitializeComponent();
         }
-        private async void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopAsync();
-        }
     }
-    
 }

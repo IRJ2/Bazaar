@@ -2,7 +2,7 @@
 <ContentPage
     x:Class="Bazaar.AddAddressPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     BackgroundColor="White"
     NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
@@ -58,7 +58,12 @@
                 <Entry
                     BackgroundColor="Transparent"
                     FontSize="16"
-                    Placeholder="Flat,Floor,Building Name" />
+                    Placeholder="Flat,Floor,Building Name" >
+                    <Entry.Effects>
+                        <xct:RemoveBorderEffect>
+                        </xct:RemoveBorderEffect>
+                    </Entry.Effects>
+                </Entry>
             </Frame>
             <Frame
                 Grid.Row="2"
@@ -74,7 +79,12 @@
                 <Entry
                     BackgroundColor="Transparent"
                     FontSize="16"
-                    Placeholder="How to reach (Optional)" />
+                    Placeholder="How to reach (Optional)" >
+                    <Entry.Effects>
+                        <xct:RemoveBorderEffect>
+                        </xct:RemoveBorderEffect>
+                    </Entry.Effects>
+                </Entry>
             </Frame>
             <Frame
                 Grid.Row="2"
@@ -90,7 +100,12 @@
                 <Entry
                     BackgroundColor="Transparent"
                     FontSize="16"
-                    Placeholder="Contact Details (Optional)" />
+                    Placeholder="Contact Details (Optional)" >
+                    <Entry.Effects>
+                        <xct:RemoveBorderEffect>
+                        </xct:RemoveBorderEffect>
+                    </Entry.Effects>
+                </Entry>
             </Frame>
             <Button
                 Grid.Row="2"

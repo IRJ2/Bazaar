@@ -2,7 +2,7 @@
 <ContentPage
     x:Class="Bazaar.HomePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     BackgroundColor="White"
     NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
@@ -36,9 +36,9 @@
                     WidthRequest="15" />
                 <ImageButton
                     Grid.Row="0"
-                    Clicked="ImageButton_Clicked"
                     Margin="280,13,56,13"
                     BackgroundColor="White"
+                    Clicked="ImageButton_Clicked"
                     HeightRequest="24"
                     HorizontalOptions="End"
                     Source="Vector5.png"
@@ -47,8 +47,8 @@
                 <ImageButton
                     Grid.Row="0"
                     Margin="318,13,13,13"
-                    Clicked="ProfileButton_Clicked"
                     BackgroundColor="White"
+                    Clicked="ProfileButton_Clicked"
                     HeightRequest="30"
                     HorizontalOptions="End"
                     Source="PersonIcon.png"
@@ -68,7 +68,12 @@
                             Grid.Column="0"
                             BackgroundColor="Transparent"
                             FontSize="12"
-                            Placeholder="Search" />
+                            Placeholder="Search">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect>
+                                </xct:RemoveBorderEffect>
+                            </Entry.Effects>
+                        </Entry>
                         <Image
                             Grid.Column="1"
                             HeightRequest="24"
